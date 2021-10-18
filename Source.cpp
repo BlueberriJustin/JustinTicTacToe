@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
 #include <Windows.h>
+#include <ctime>
+#include <cstdlib>
+
 
 using namespace std;
 
@@ -8,6 +11,7 @@ int print(string stringg);
 bool willLoop = true;
 void printBoard(char TTTSpot[]);
 void playerInput(char* TTTSpot, int TTTChoice);
+void cpuInput(char* TTTSpot);
 
 //The main GOAT
 int main()
@@ -15,6 +19,8 @@ int main()
 	int TTTChoice=0;
 	//Start da game boi
 	char TTTSpot[9] = { '1','2','3','4','5','6','7','8','9' };
+
+	srand(static_cast<unsigned int>(time(0)));
 
 	//Introduction spoken by the GOAT
 	system("color 2");
@@ -34,6 +40,10 @@ int main()
 	system("cls");
 	printBoard(TTTSpot);
 	cout << "Aight bet, lemme choose..." << endl;
+	cpuInput(TTTSpot);
+	
+
+		return(0);
 }
 
 //Couts the board
@@ -134,8 +144,64 @@ int print(string stringg)
 }
 
 //Where all the jumbles mess of the if and else if statements start uugugggghhghghgh
-void cpuInput(char* TTTSpot, int TTTChoice)
+void cpuInput(char* TTTSpot)
 {
-	//if (TTTChoice == '1')
+	int cpuMove = 0;
+	bool noMove = true;
+
+	while (noMove)
+	{
+		cpuMove = rand() % 9; //Anything between 0 and 8, matches with array index values
+
+		if (TTTSpot[cpuMove] == '1')
+		{
+			TTTSpot[cpuMove] = 'O';
+			noMove = false;
+		}
+		else if (TTTSpot[cpuMove] == '2')
+		{
+			TTTSpot[cpuMove] = 'O';
+			noMove = false;
+		}
+		else if (TTTSpot[cpuMove] == '3')
+		{
+			TTTSpot[cpuMove] = 'O';
+			noMove = false;
+		}
+		else if (TTTSpot[cpuMove] == '4')
+		{
+			TTTSpot[cpuMove] = 'O';
+			noMove = false;
+		}
+		else if (TTTSpot[cpuMove] == '5')
+		{
+			TTTSpot[cpuMove] = 'O';
+			noMove = false;
+		}
+		else if (TTTSpot[cpuMove] == '6')
+		{
+			TTTSpot[cpuMove] = 'O';
+			noMove = false;
+		}
+		else if (TTTSpot[cpuMove] == '7')
+		{
+			TTTSpot[cpuMove] = 'O';
+			noMove = false;
+		}
+		else if (TTTSpot[cpuMove] == '8')
+		{
+			TTTSpot[cpuMove] = 'O';
+			noMove = false;
+		}
+		else if (TTTSpot[cpuMove] == '9')
+		{
+			TTTSpot[cpuMove] = 'O';
+			noMove = false;
+		}
+		else
+		{
+			cout << "NVM, ya boy passes this round... Your turn..." << endl;
+		}
+	}
 		
 }
