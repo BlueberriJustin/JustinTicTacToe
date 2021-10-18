@@ -40,7 +40,7 @@ int main()
 void printBoard(char TTTSpot[])
 {
 
-	//da board les goooooooo
+	//array for da board les goooooooo
 	cout << "       |       |      " << endl;
 	cout << "   " << TTTSpot[0] << "   |   " << TTTSpot[1] << "   |   " << TTTSpot[2] << endl;
 	cout << "       |       |      " << endl;
