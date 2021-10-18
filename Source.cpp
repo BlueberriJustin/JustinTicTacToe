@@ -31,16 +31,23 @@ int main()
 	print("Aight, let ya boy set up da board.");
 	cout << endl;
 
-	//Round1
-	printBoard(TTTSpot);
-	cout << "What is your move? Pathetic, puny, weakling..." << endl;
-	cout << "I'll only read the first number of yo answer, so if yall type sum goofy like 789... Imma just read 7, bruh." << endl;
-	cout << "It's cuz the creator was too lazy to change the cin type as well as all of the code associated with the cin type from char to string and the creator already did another method before teacher already went to that shiz so yeah..." << endl;
-	playerInput(TTTSpot, TTTChoice);
-	system("cls");
-	printBoard(TTTSpot);
-	cout << "Aight bet, lemme choose..." << endl;
-	cpuInput(TTTSpot);
+	//Rounds
+	int Round = 0;
+	do
+	{
+		printBoard(TTTSpot);
+		Round++;
+		cout << "Round " << Round << "!" << endl;
+		cout << "What is your move? Pathetic, puny, weakling..." << endl;
+		playerInput(TTTSpot, TTTChoice);
+		system("cls");
+		printBoard(TTTSpot);
+		print("Aight bet, lemme choose...");
+		Sleep(2000);
+		system("cls");
+		cpuInput(TTTSpot);
+	} while (true);
+
 	
 
 		return(0);
@@ -197,10 +204,6 @@ void cpuInput(char* TTTSpot)
 		{
 			TTTSpot[cpuMove] = 'O';
 			noMove = false;
-		}
-		else
-		{
-			cout << "NVM, ya boy passes this round... Your turn..." << endl;
 		}
 	}
 		
